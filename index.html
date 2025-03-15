@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.1/dist/index.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b8a58bc95c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" media="mediatype and|not|only (expressions)" href="print.css">
+</head>
+<body>
+    <header class="header" id="navigation-menu">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="https://raw.githubusercontent.com/MichaelZhou334/Hotel-Landing-Page/main/images/logo.jpeg" alt="logo image">
+                </a>
+                <ul class="nav-menu">
+                    <li> <a href="#home" class="nav-list">Hotel</a> </li>
+                    <li> <a href="#destinations" class="nav-list">Tujuan</a> </li>
+                    <li> <a href="#offers" class="nav-list">Offers</a> </li>
+                    <li> <a href="#travel-experience" class="nav-list">Pengalaman</a> </li>
+                    <li> <a href="#meetings-events" class="nav-list">Acara</a> </li>
+                </ul>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+
+    <div class="location-ask">
+        <span class="where-to">Ingin Pergi Kemana?</span> <span class="required">(Required) </span> <br />
+    <div class="booking">
+
+            <label class="location-label"></label>
+            <input type="text" class="location" placeholder="Kota, Provinsi" required>
+
+            <button type="submit" class="btn date" onclick="dateOpenPopup()">Tanggal</button>
+            <div class="date-popup" id="date-popup">
+                <h2>Pilih Tanggal</h2>
+                <input type="text" id="datepicker">
+                <button type="button" onclick="dateClosePopup()">OK</button>
+            </div>
+
+            <button type="submit" class="btn room" onclick="roomOpenPopup()">Ruang dan Tamu</button>
+            <div class="room-popup" id="room-popup">
+                <h2>Ruang dan Tamu</h2>
+                <div class="container-room">
+                <form>
+                    <label for="rooms">Ruangan:</label>
+                    <input type="number" id="rooms" value=1><br><br>
+                    <label for="adults">Dewasa:</label>
+                    <input type="number" id="adults" value=1><br><br>
+                    <label for="kids">Anak Anak:</label>
+                    <input type="number" id="kids" value=0><br><br>
+                </form>
+                <button type="button" onclick="roomClosePopup()">OK</button>
+
+            </div>
+            </div>
+            <button type="submit" class="btn special-rates" onclick="ratesOpenPopup()">Harga Spesial</button>
+            <div class="rates-popup" id="rates-popup">
+                <h2>Harga Spesial</h2>
+                <form class="special-rates-checkbox">
+                    <label class="special-rates-checkbox">Gunakan Points
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="special-rates-checkbox">Agen Travel
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="special-rates-checkbox">AAA Rate
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="special-rates-checkbox">AARP Rate
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="special-rates-checkbox">Senior Rate
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="special-rates-checkbox">Pemerintahan Rate
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+
+                </form>
+                    <form class="special-rates-text">
+
+                        <label for="promotion-code">Kode Promosi</label><br>
+                        <input type="text" id="promotion-code"><br><br>
+
+                    </form>
+
+
+                <button type="button" onclick="ratesClosePopup()">OK</button>
+            </div>
+
+            <button type="submit" class="btn find-hotels">Cari Hotel</button>
+
+    </div>
+
+    <div class="hotel-front-container">
+        <img src="https://raw.githubusercontent.com/MichaelZhou334/Hotel-Landing-Page/main/images/hotel_front.jpg" alt="picture of the front of the hotel" class="hotel-front">
+       </div>
+
+       <div class="welcome-text">
+        <h2>Wonderful Indonesia</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur delectus fugit aliquid adipisci dolor, magni amet quam similique odio sequi id ratione voluptate provident iusto.</p>
+        <button class="btn">Lebih Detail</button>
+       </div>
+
+       <div class="subheading">
+        <h2>Destinasi Menyenangkan Lainnya</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et dolores nihil sunt esse libero quos accusamus quibusdam ipsam non assumenda, sint in hic iusto praesentium deserunt nostrum perspiciatis a eos quis quasi deleniti odit eaque consectetur unde? Vel facere nulla error delectus, voluptates dicta animi illum eos, et atque maxime.</p>
+       </div>
+
+       <div class="destinations-images">
+
+        <div class="country" id="italy-div">
+            <img src="https://raw.githubusercontent.com/MichaelZhou334/Hotel-Landing-Page/main/images/italy-hotel.jpg" alt="italy hotel" >
+            <div class="country-text" id="italy-text">ITALY</div>
+        </div>
+        <div class="country" id="portugal-div">
+            <img src="https://raw.githubusercontent.com/MichaelZhou334/Hotel-Landing-Page/main/images/portugal-hotel.jpg" alt="portugal hotel" >
+            <div class="country-text" id="portugal-text">PORTUGAL</div>
+        </div>
+        <div class="country" id="japan-div">
+            <img src="https://raw.githubusercontent.com/MichaelZhou334/Hotel-Landing-Page/main/images/japan-hotel.jpg" alt="japan hotel" >
+            <div class="country-text" id="japan-text">JAPAN</div>
+        </div>
+        <div class="country" id="egypt-div">
+            <img src="https://raw.githubusercontent.com/MichaelZhou334/Hotel-Landing-Page/main/images/egypt-hotel.jpg" alt="egypt hotel" >
+            <div class="country-text" id="egypt-text">EGYPT</div>
+        </div>
+       </div>
+
+       <div class="subheading">
+        <h2>Pengalaman Baru</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, porro! Quod velit quas, vitae magni quis fuga blanditiis voluptate aperiam et repellat! Commodi eos ipsam maiores sequi dignissimos veniam cum nesciunt labore ex officiis possimus culpa, vero dolor at nostrum quo aliquid praesentium molestias aspernatur cumque est. Nemo, quisquam possimus.</p>
+       </div>
+
+       <div class="experience-images">
+        <div class="experience" id="discount-div">
+            <img src="https://raw.githubusercontent.com/MichaelZhou334/Hotel-Landing-Page/main/images/discount.jpg" alt="discount picture" >
+            <div class="experience-text" id="discount-text">Diskon Hingga 75%</div>
+        </div>
+        <div class="experience" id="points-div">
+            <img src="https://raw.githubusercontent.com/MichaelZhou334/Hotel-Landing-Page/main/images/points.jpg" alt="points picture" >
+            <div class="experience-text" id="points-text">Dapatkan Poin</div>
+        </div>
+        <div class="experience" id="parking-div">
+            <img src="https://raw.githubusercontent.com/MichaelZhou334/Hotel-Landing-Page/main/images/parking.jpg" alt="parking picture" >
+            <div class="experience-text" id="parking-text">Mudah Dicari</div>
+        </div>
+        <div class="experience" id="plan-div">
+            <img src="https://raw.githubusercontent.com/MichaelZhou334/Hotel-Landing-Page/main/images/plan.jpg" alt="plan picture" >
+            <div class="experience-text" id="plan-text">Makanan Yang Lezat</div>
+        </div>
+        <div class="experience" id="first-time-div">
+            <img src="https://raw.githubusercontent.com/MichaelZhou334/Hotel-Landing-Page/main/images/first-time.jpg" alt="first-time picture" >
+            <div class="experience-text" id="first-time-text">Reservasi Mudah</div>
+        </div>
+        <div class="experience" id="members-div">
+            <img src="https://raw.githubusercontent.com/MichaelZhou334/Hotel-Landing-Page/main/images/front-desk.jpg" alt="members picture" >
+            <div class="experience-text" id="members-text">Member Mendapatikan Keuntungan Lebih</div>
+        </div>
+       </div>
+
+       <div class="different-hotels">
+        <img src="https://raw.githubusercontent.com/MichaelZhou334/Hotel-Landing-Page/main/images/villa.jpg" alt="hotel front">
+        <div class="different-hotels-div">
+        <h2>Sewa Rumah dan Villa</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quo necessitatibus ut optio recusandae iusto debitis sit ratione incidunt? Aspernatur nam provident veritatis officiis distinctio at eaque, omnis debitis ratione voluptatum quasi aperiam eius nisi iusto maxime ipsam soluta culpa quae sed, asperiores cupiditate rerum optio animi. Non veritatis consectetur est? Dolorum esse consequuntur, eaque veniam ipsam, laborum consectetur tempora beatae repellat in quis odio similique assumenda officiis odit aliquid vero id laudantium! Quos, sint!</p>
+        <button type="submit" class="btn">Bergabung secara Gratis</button>
+    </div>
+    </div>
+
+    <div class="back-to-top">
+    <button onclick="topFunction()" class="btn"> ⬆ Kembali ke Atas</button>
+    </div>
+
+  <hr class="footer-line">
+
+    <div class="footer">
+        <div class="col-1">
+            <div>
+            <h3>Apa yang bisa kami bantu?</h3>
+            <button class="btn">Hubungi kami</button>
+            <div class="social-icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+
+            </div>
+
+        </div>
+        </div>
+        <div class="col-2">
+            <a href="#">Inspirasi Liburan</a>
+            <a href="#">Bisa Membawa Hewan Pelini</a>
+            <a href="#">Lokasi</a>
+            <a href="#">Pengembangan</a>
+            <a href="#">Media</a>
+            <a href="#">Blog</a>
+            <a href="#">Customer Service</a>
+        </div>
+        <div class="col-2">
+            <a href="#">Inspirasi Liburan</a>
+            <a href="#">Bisa Membawa Hewan Pelini</a>
+            <a href="#">Lokasi</a>
+            <a href="#">Pengembangan</a>
+            <a href="#">Media</a>
+            <a href="#">Blog</a>
+            <a href="#">Customer Service</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    </body>
+    </html>
